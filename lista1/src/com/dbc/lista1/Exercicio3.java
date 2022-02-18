@@ -12,7 +12,7 @@ public class Exercicio3 {
         System.out.println("Digite o valor pago:");
         double valorPago = sc.nextDouble();
 
-        Double troco = null;
+        double troco;
         if(valorPago < valorConsumido){
             System.out.println("O valor pago deve ser maior que o valor consumido!");
         } else{

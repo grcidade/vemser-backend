@@ -17,7 +17,7 @@ public class Exercicio6 {
                         + "(Time)\n"
                         + "(Love)\n"
                         + "(City)\n"
-                        + "(Happy)\n");
+                        + "(Happy)");
 
         String palavra = sc.next();
 

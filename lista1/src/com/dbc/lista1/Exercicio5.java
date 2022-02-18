@@ -19,7 +19,7 @@ public class Exercicio5 {
         double horaExtraCem = sc.nextDouble();
 
         double salarioBruto = ((horaNormalTrabalhada * horaReais) + (horaExtraCinquenta * horaReais * 1.5) + (horaExtraCem * horaReais * 2));
-        System.out.println("Salario bruto: " + String.format("%.2f", salarioBruto ));
+        System.out.println("Salario bruto: " + String.format("%.2f", salarioBruto) + "R$");
 
         sc.close();
     }
