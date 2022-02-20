@@ -23,11 +23,11 @@ public class Endereco {
     }
 
     public void imprimirEndereco(){
-        String  tipoMsg = "";
+        String  tipoMsg;
         if(tipo == 1){
-            tipoMsg = "residencial";
+            tipoMsg = "Residencial";
         } else{
-            tipoMsg = "comercial";
+            tipoMsg = "Comercial";
         }
         System.out.println("Tipo: " + tipo + " - " + tipoMsg + "\n" + "Logradouro: " + logradouro + "\n" + "Número: " + numero + "\n" + "Complemento: " + complemento + "\n" +
                         "Cep: " + cep + "\n" + "Cidade: " + cidade + "\n" + "Estado: " + estado + "\n" + "País: " + pais);

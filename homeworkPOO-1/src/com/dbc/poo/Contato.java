@@ -13,11 +13,11 @@ public class Contato {
     }
 
     public void imprimirContato(){
-        String  tipoMsg = "";
+        String  tipoMsg;
         if(tipo == 1){
-            tipoMsg = "residencial";
+            tipoMsg = "Residencial";
         } else{
-            tipoMsg = "comercial";
+            tipoMsg = "Comercial";
         }
         System.out.println("Descrição: " + descricao + "\n"
                         + "Telefone: " + telefone + "\n"
