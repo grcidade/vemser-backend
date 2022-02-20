@@ -24,8 +24,11 @@ public class ContaCorrente {
     }
 
     public boolean sacar(double valor){
-        if(valor > retornarSaldoComChequeEspecial() || valor < 0.0){
+        if(valor > retornarSaldoComChequeEspecial()){
             throw new IllegalArgumentException("Valor de saque mais alto do que deveria!");
+        }
+        if(valor < 0.0){
+            throw new IllegalArgumentException("Valor deve ser maior do que 0!");
         }
         if(valor > saldo){
             double resto = valor - saldo;

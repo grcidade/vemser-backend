@@ -1,14 +1,12 @@
 package com.dbc.poo;
 
-import java.util.Arrays;
-
 public class Cliente {
 
     public String nome;
     public String cpf;
 
-    public Contato[] contatos;
-    public Endereco[] enderecos;
+    public Contato[] contatos = new Contato[2];
+    public Endereco[] enderecos = new Endereco[2];
 
     public Cliente(String nome, String cpf, Contato[] contatos, Endereco[] enderecos) {
         this.nome = nome;
