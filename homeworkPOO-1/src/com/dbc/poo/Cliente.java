@@ -8,11 +8,9 @@ public class Cliente {
     public Contato[] contatos = new Contato[2];
     public Endereco[] enderecos = new Endereco[2];
 
-    public Cliente(String nome, String cpf, Contato[] contatos, Endereco[] enderecos) {
+    public Cliente(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
-        this.contatos = contatos;
-        this.enderecos = enderecos;
     }
 
     public void imprimirContatos(){
