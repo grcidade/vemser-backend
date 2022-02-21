@@ -14,14 +14,18 @@ public class Cliente {
     }
 
     public void imprimirContatos(){
-        for (Contato contato : contatos) {
-            contato.imprimirContato();
+        for (Contato contato : contatos){
+            if(contato != null){
+                contato.imprimirContato();
+            }
         }
     }
 
     public void imprimirEnderecos(){
-        for (Endereco endereco : enderecos) {
-            endereco.imprimirEndereco();
+        for (Endereco endereco : enderecos){
+            if(endereco != null){
+                endereco.imprimirEndereco();
+            }
         }
     }
 

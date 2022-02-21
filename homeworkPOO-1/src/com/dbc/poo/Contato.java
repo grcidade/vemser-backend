@@ -16,8 +16,10 @@ public class Contato {
         String  tipoMsg;
         if(tipo == 1){
             tipoMsg = "Residencial";
-        } else{
+        } else if(tipo == 2){
             tipoMsg = "Comercial";
+        } else{
+            throw new IllegalArgumentException("Tipo de contato invalido");
         }
         System.out.println("Descrição: " + descricao + "\n"
                         + "Telefone: " + telefone + "\n"

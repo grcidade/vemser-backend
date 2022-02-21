@@ -26,8 +26,10 @@ public class Endereco {
         String  tipoMsg;
         if(tipo == 1){
             tipoMsg = "Residencial";
-        } else{
+        } else if(tipo == 2){
             tipoMsg = "Comercial";
+        } else{
+            throw new IllegalArgumentException("Tipo de contato invalido");
         }
         System.out.println("Tipo: " + tipo + " - " + tipoMsg + "\n" + "Logradouro: " + logradouro + "\n" + "Número: " + numero + "\n" + "Complemento: " + complemento + "\n" +
                         "Cep: " + cep + "\n" + "Cidade: " + cidade + "\n" + "Estado: " + estado + "\n" + "País: " + pais);
