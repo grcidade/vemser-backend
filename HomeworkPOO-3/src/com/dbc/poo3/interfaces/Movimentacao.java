@@ -1,6 +1,6 @@
-package com.dbc.poo2.interfaces;
+package com.dbc.poo3.interfaces;
 
-import com.dbc.poo2.entities.Conta;
+import com.dbc.poo3.entities.Conta;
 
 public interface Movimentacao {
 

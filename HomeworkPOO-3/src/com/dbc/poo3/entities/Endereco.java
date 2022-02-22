@@ -1,4 +1,4 @@
-package com.dbc.poo2.entities;
+package com.dbc.poo3.entities;
 
 public class Endereco {
 

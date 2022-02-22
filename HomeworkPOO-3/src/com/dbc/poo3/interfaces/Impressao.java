@@ -1,4 +1,4 @@
-package com.dbc.poo2.interfaces;
+package com.dbc.poo3.interfaces;
 
 public interface Impressao {
 

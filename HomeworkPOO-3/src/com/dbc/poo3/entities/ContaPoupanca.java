@@ -1,6 +1,6 @@
-package com.dbc.poo2.entities;
+package com.dbc.poo3.entities;
 
-import com.dbc.poo2.interfaces.Impressao;
+import com.dbc.poo3.interfaces.Impressao;
 
 public class ContaPoupanca extends Conta implements Impressao {
 

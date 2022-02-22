@@ -1,6 +1,7 @@
-package com.dbc.poo2.main;
+package com.dbc.poo3.main;
 
-import com.dbc.poo2.entities.*;
+
+import com.dbc.poo3.entities.*;
 
 public class Main {
 
