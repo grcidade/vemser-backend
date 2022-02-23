@@ -1,12 +1,15 @@
 package com.dbc.poo3.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cliente {
 
     private String nome;
     private String cpf;
 
-    private Contato[] contatos = new Contato[2];
-    private Endereco[] enderecos = new Endereco[2];
+    private List<Contato> contatos = new ArrayList<>();
+    private List<Endereco> enderecos = new ArrayList<>();
 
     public Cliente(String nome, String cpf) {
         this.nome = nome;
@@ -29,19 +32,19 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    public Contato[] getContatos() {
+    public List<Contato> getContatos() {
         return contatos;
     }
 
-    public void setContatos(Contato[] contatos) {
+    public void setContatos(List<Contato> contatos) {
         this.contatos = contatos;
     }
 
-    public Endereco[] getEnderecos() {
+    public List<Endereco> getEnderecos() {
         return enderecos;
     }
 
-    public void setEnderecos(Endereco[] enderecos) {
+    public void setEnderecos(List<Endereco> enderecos) {
         this.enderecos = enderecos;
     }
 

@@ -81,8 +81,10 @@ public abstract class Conta implements Movimentacao {
         }
         saldo -= valor;
         conta.saldo += valor;
-        System.out.println("A conta número " + numeroConta + " do " + cliente.getNome() + " transferiu " + valor
-                + "R$ para a conta número " + conta.numeroConta + " do " + conta.cliente.getNome() + "!");
+        System.out.println(cliente.getNome() + " transferiu " + valor
+                + "R$ para " + conta.cliente.getNome() + "!");
+        System.out.println("Saldo do " + cliente.getNome() + " = " + saldo);
+        System.out.println("Saldo do " + conta.cliente.getNome() + " = " + conta.saldo);
         return true;
     }
 }
