@@ -24,6 +24,7 @@ public class Pilha {
                 System.out.println("Pilha vazia! Não é possível retirar um número.");
             }
             x++;
+
         }
 
         System.out.println();
