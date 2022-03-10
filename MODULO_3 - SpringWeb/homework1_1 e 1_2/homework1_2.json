@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "5218cca9-9002-4237-9903-2292aad73789",
+		"name": "homework1_2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PESSOA",
+			"item": [
+				{
+					"name": "GetPessoa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://back-vemserdbc.herokuapp.com/pessoa",
+							"protocol": "https",
+							"host": [
+								"back-vemserdbc",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostPessoa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"vitoria\",\r\n    \"dataNascimento\": \"2002-01-10\",\r\n    \"cpf\":\"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://back-vemserdbc.herokuapp.com/pessoa",
+							"protocol": "https",
+							"host": [
+								"back-vemserdbc",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePessoa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://back-vemserdbc.herokuapp.com/pessoa/3",
+							"protocol": "https",
+							"host": [
+								"back-vemserdbc",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"pessoa",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePessoa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"vitoria barreto\",\r\n    \"dataNascimento\": \"2002-01-10\",\r\n    \"cpf\":\"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://back-vemserdbc.herokuapp.com/pessoa/7",
+							"protocol": "https",
+							"host": [
+								"back-vemserdbc",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"pessoa",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CONTATO",
+			"item": [
+				{
+					"name": "GetContato",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://back-vemserdbc.herokuapp.com/contato",
+							"protocol": "https",
+							"host": [
+								"back-vemserdbc",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"contato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetContatoById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://back-vemserdbc.herokuapp.com/contato/7",
+							"protocol": "https",
+							"host": [
+								"back-vemserdbc",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"contato",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostContato",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipoContato\": \"COMERCIAL\",\r\n    \"numero\": \"048995876566\",\r\n    \"descricao\": \"HomePhone\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://back-vemserdbc.herokuapp.com/contato/7",
+							"protocol": "https",
+							"host": [
+								"back-vemserdbc",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"contato",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteContato",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://back-vemserdbc.herokuapp.com/contato/12",
+							"protocol": "https",
+							"host": [
+								"back-vemserdbc",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"contato",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateContato",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"tipoContato\": \"COMERCIAL\",\r\n        \"numero\": \"048995876566\",\r\n        \"descricao\": \"HomePhone\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://back-vemserdbc.herokuapp.com/contato/11",
+							"protocol": "https",
+							"host": [
+								"back-vemserdbc",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"contato",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
