@@ -2,12 +2,16 @@ package com.dbc.vemser.homework_pessoa_contato_api.service;
 
 import com.dbc.vemser.homework_pessoa_contato_api.entity.Contato;
 import com.dbc.vemser.homework_pessoa_contato_api.repository.ContatoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ContatoService {
 
-    private final ContatoRepository contatoRepository = new ContatoRepository();
+    @Autowired
+    private ContatoRepository contatoRepository;
 
     public List<Contato> listarContatos(){
         return contatoRepository.list();

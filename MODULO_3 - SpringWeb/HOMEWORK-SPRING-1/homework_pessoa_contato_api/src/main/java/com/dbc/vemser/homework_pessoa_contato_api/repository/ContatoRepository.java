@@ -1,12 +1,14 @@
 package com.dbc.vemser.homework_pessoa_contato_api.repository;
 
 import com.dbc.vemser.homework_pessoa_contato_api.entity.Contato;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
+@Repository
 public class ContatoRepository {
 
     private final List<Contato> listaContatos = new ArrayList<>();

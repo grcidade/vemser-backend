@@ -2,6 +2,7 @@ package com.dbc.vemser.homework_pessoa_contato_api.controller;
 
 import com.dbc.vemser.homework_pessoa_contato_api.entity.Contato;
 import com.dbc.vemser.homework_pessoa_contato_api.service.ContatoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,7 +11,8 @@ import java.util.List;
 @RequestMapping("/contato")
 public class ContatoController {
 
-    private final ContatoService contatoService = new ContatoService();
+    @Autowired
+    private ContatoService contatoService;
 
     @GetMapping
     public List<Contato> list(){

@@ -1,6 +1,7 @@
 package com.dbc.vemser.homework_pessoa_contato_api.repository;
 
 import com.dbc.vemser.homework_pessoa_contato_api.entity.Pessoa;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -9,6 +10,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
+@Repository
 public class PessoaRepository {
     private static final List<Pessoa> listaPessoas = new ArrayList<>();
     private final AtomicInteger COUNTER = new AtomicInteger();
