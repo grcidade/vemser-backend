@@ -1,5 +1,6 @@
 package com.dbc.vemser.homework_pessoa_contato_api.controller;
 
+import com.dbc.vemser.homework_pessoa_contato_api.component.PropertiReader;
 import com.dbc.vemser.homework_pessoa_contato_api.entity.Pessoa;
 import com.dbc.vemser.homework_pessoa_contato_api.service.PessoaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,14 @@ public class PessoaController {
 
     @Autowired
     private PessoaService pessoaService;
+
+    @Autowired
+    private PropertiReader propertiReader;
+
+    @GetMapping("/ambiente")
+    public String retornarAmbiente(){
+        return propertiReader.getAmbiente();
+    }
 
     @GetMapping("/hello") // localhost:8080/pessoa/hello
     public String hello() {
