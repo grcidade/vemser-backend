@@ -2,6 +2,8 @@ package com.dbc.vemser.homework_pessoa_contato_api.service;
 
 import com.dbc.vemser.homework_pessoa_contato_api.entity.Pessoa;
 import com.dbc.vemser.homework_pessoa_contato_api.repository.PessoaRepository;
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,15 +16,31 @@ public class PessoaService {
     private PessoaRepository pessoaRepository;
 
     public Pessoa create(Pessoa pessoa){
-        return pessoaRepository.create(pessoa);
+        try{
+            if(StringUtils.isBlank(pessoa.getNome())){
+                throw new Exception("Nome não pode estar em branco");
+            }
+
+            if(ObjectUtils.isEmpty(pessoa.getDataNascimento())){
+                throw new Exception("Insira uma data de nascimento!");
+            }
+
+            if(StringUtils.isBlank(pessoa.getCpf()) || StringUtils.length(pessoa.getCpf()) != 11){
+                throw new Exception("CPF precisa ter 11 digitos");
+            }
+
+            return pessoaRepository.create(pessoa);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
     public List<Pessoa> list(){
         return pessoaRepository.list();
     }
 
-    public Pessoa update(Integer id,
-                         Pessoa pessoaAtualizar) throws Exception {
+    public Pessoa update(Integer id, Pessoa pessoaAtualizar) throws Exception {
         return pessoaRepository.update(id, pessoaAtualizar);
     }
 
