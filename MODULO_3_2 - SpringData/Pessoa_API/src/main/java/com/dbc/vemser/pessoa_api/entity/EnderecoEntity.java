@@ -19,6 +19,7 @@ public class EnderecoEntity {
     private Integer idEndereco;
 
     @Column(name = "TIPO")
+    @Enumerated(EnumType.ORDINAL)
     private TipoEndereco tipo;
 
     @Column(name = "LOGRADOURO")
