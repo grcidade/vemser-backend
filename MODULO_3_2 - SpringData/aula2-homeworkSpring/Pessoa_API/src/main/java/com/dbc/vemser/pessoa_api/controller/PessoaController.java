@@ -8,12 +8,9 @@ import com.dbc.vemser.pessoa_api.entity.PessoaEntity;
 import com.dbc.vemser.pessoa_api.repository.PessoaRepository;
 import com.dbc.vemser.pessoa_api.service.PessoaService;
 import io.swagger.annotations.ApiOperation;
-
 import io.swagger.annotations.ApiResponse;
-
 import io.swagger.annotations.ApiResponses;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

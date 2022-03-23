@@ -31,8 +31,9 @@ public class EnderecoController {
     }
 
     @PostMapping
-    public ResponseEntity<EnderecoDTO> postEndereco(@Valid @RequestBody EnderecoCreateDTO endereco) throws Exception {
-        return new ResponseEntity<>(enderecoService.criarEndereco(endereco), HttpStatus.CREATED);
+    public ResponseEntity<EnderecoDTO> postEndereco(@Valid @RequestBody EnderecoCreateDTO endereco,
+                                                    @RequestParam("idPessoa") Integer idPessoa) throws Exception {
+        return new ResponseEntity<>(enderecoService.criarEndereco(idPessoa ,endereco), HttpStatus.CREATED);
     }
 
     @PutMapping("/{idEndereco}")

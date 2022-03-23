@@ -4,6 +4,7 @@ package com.dbc.vemser.pessoa_api.service;
 import com.dbc.vemser.pessoa_api.dto.ContatoCreateDTO;
 import com.dbc.vemser.pessoa_api.dto.ContatoDTO;
 import com.dbc.vemser.pessoa_api.entity.ContatoEntity;
+import com.dbc.vemser.pessoa_api.entity.PessoaEntity;
 import com.dbc.vemser.pessoa_api.exceptions.RegraDeNegocioException;
 import com.dbc.vemser.pessoa_api.repository.ContatoRepository;
 import com.dbc.vemser.pessoa_api.repository.PessoaRepository;
@@ -23,6 +24,9 @@ public class ContatoService {
     private final ContatoRepository contatoRepository;
     private final PessoaRepository pessoaRepository;
     private final ObjectMapper objectMapper;
+    private final PessoaService pessoaService;
+
+    // TODO: 23/03/2022 Tirar pessoa repository e trocar tudo para pessoa service
 
     public List<ContatoDTO> listarContatos(){
         log.info("Chamou listar contatos");
@@ -42,6 +46,9 @@ public class ContatoService {
                                 .findFirst().orElseThrow(()-> new RegraDeNegocioException("Pessoa não encontrada"));
         log.info("Chamou criar contatoEntity");
         ContatoEntity contatoEntity = objectMapper.convertValue(contatoCriado, ContatoEntity.class);
+        PessoaEntity pessoaEntity = pessoaService.findById(contatoCriado.getIdPessoa());
+        contatoEntity.setPessoaEntity(pessoaEntity);
+        contatoEntity.setIdPessoa(contatoCriado.getIdPessoa());
         return objectMapper.convertValue(contatoRepository.save(contatoEntity), ContatoDTO.class);
     }
 

@@ -4,6 +4,7 @@ import com.dbc.vemser.pessoa_api.dto.EnderecoCreateDTO;
 import com.dbc.vemser.pessoa_api.dto.EnderecoDTO;
 import com.dbc.vemser.pessoa_api.dto.PessoaDTO;
 import com.dbc.vemser.pessoa_api.entity.EnderecoEntity;
+import com.dbc.vemser.pessoa_api.entity.PessoaEntity;
 import com.dbc.vemser.pessoa_api.exceptions.RegraDeNegocioException;
 import com.dbc.vemser.pessoa_api.repository.EnderecoRepository;
 import com.dbc.vemser.pessoa_api.repository.PessoaRepository;
@@ -24,8 +25,9 @@ public class EnderecoService {
     private final EnderecoRepository enderecoRepository;
     private final PessoaRepository pessoaRepository;
     private final ObjectMapper objectMapper;
+    private final PessoaService pessoaService;
 
-    public EnderecoDTO criarEndereco(EnderecoCreateDTO enderecoCriar) throws Exception {
+    public EnderecoDTO criarEndereco(Integer idPessoa,EnderecoCreateDTO enderecoCriar) throws Exception {
         log.info("Chamou criar endereço");
         EnderecoEntity enderecoCriado = objectMapper.convertValue(enderecoCriar, EnderecoEntity.class);
         return objectMapper.convertValue(enderecoRepository.save(enderecoCriado), EnderecoDTO.class);

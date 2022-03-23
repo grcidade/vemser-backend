@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class PessoaDTOComEnderecos {
+public class PessoaDTOComEnderecos extends PessoaDTO{
 
     private Integer idPessoa;
     private List<EnderecoDTO> enderecos;

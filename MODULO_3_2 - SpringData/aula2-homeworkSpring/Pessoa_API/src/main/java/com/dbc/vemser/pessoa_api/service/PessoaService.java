@@ -5,9 +5,9 @@ import com.dbc.vemser.pessoa_api.entity.PessoaEntity;
 import com.dbc.vemser.pessoa_api.exceptions.RegraDeNegocioException;
 import com.dbc.vemser.pessoa_api.repository.PessoaRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.swagger.models.auth.In;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -110,6 +110,10 @@ public class PessoaService {
             listPessoasDTOComEnderecos.add(pessoaDTO);
         }
         return listPessoasDTOComEnderecos;
+    }
+
+    public PessoaEntity findById(Integer idPessoa) throws RegraDeNegocioException {
+        return pessoaRepository.findById(idPessoa).orElseThrow(() -> new RegraDeNegocioException("Pessoa não encontrada"));
     }
 
 }
