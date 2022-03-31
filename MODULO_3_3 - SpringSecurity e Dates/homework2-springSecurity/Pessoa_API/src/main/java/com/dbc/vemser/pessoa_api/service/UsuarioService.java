@@ -24,10 +24,10 @@ public class UsuarioService {
         return usuarioRepository.findByLogin(login);
     }
 
-    public String cadastro(LoginDTO loginDTO) {
+    public LoginDTO cadastro(LoginDTO loginDTO) {
         UsuarioEntity novoUsuario = objectMapper.convertValue(loginDTO, UsuarioEntity.class);
         novoUsuario.setSenha(new BCryptPasswordEncoder().encode(loginDTO.getSenha()));
         usuarioRepository.save(novoUsuario);
-        return "Cadastro criado";
+        return loginDTO;
     }
 }

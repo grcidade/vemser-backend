@@ -41,7 +41,7 @@ public class AuthController {
     }
 
     @PostMapping("/cadastro")
-    public ResponseEntity<String> cadastro(@RequestBody @Valid LoginDTO loginDTO){
+    public ResponseEntity<LoginDTO> cadastro(@RequestBody @Valid LoginDTO loginDTO){
         return ResponseEntity.ok(usuarioService.cadastro(loginDTO));
     }
 }
