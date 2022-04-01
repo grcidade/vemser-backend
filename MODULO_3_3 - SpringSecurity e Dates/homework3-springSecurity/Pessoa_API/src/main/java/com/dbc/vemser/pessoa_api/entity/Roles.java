@@ -6,25 +6,21 @@ import java.util.Arrays;
 
 public enum Roles {
     
-    ADMIN(1,"Administradores"),
-    USUARIO(2,"Cadastro"),
-    MARKETING(3,"Marketing");
+    ADMIN(1),
+    USUARIO(2),
+    MARKETING(3);
 
     private final Integer idGrupo;
-    private final String descricao;
 
-    Roles(Integer idGrupo, String descricao) {
+
+    Roles(Integer idGrupo) {
         this.idGrupo = idGrupo;
-        this.descricao = descricao;
     }
 
     public Integer getRole(){
         return idGrupo;
     }
 
-    public String getDescricao(){
-        return descricao;
-    }
 
     public static Roles ofTipo(Integer idGrupo){
         return Arrays.stream(Roles.values())
