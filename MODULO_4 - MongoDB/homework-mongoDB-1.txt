@@ -1,0 +1,61 @@
+db.tindev_user.insert({
+  "username" : "gui",
+		"password" : "$2a$10$hh6L1NoLUzeiCPdCc7\/gw.rY6XBmF9Sftz9dYitZZZyFAH0svPVce",
+		"personinfo_id" : 4,
+		"address_id" : 4,
+		"proglangs" : "JAVA",
+		"gender" : "MALE",
+		"pref" : "BOTH",
+		"role" : 2
+})
+{ acknowledged: true,
+  insertedIds: { '0': ObjectId("624b4e56f5e80746deb9d975") } }
+  
+  
+db.tindev_user.find()
+{ _id: ObjectId("624b4e0b597e5cebd7a4eb9b"),
+  username: 'joao',
+  password: '$2a$10$1Fs.W7gnwQz1lPH48jU4yOeo3PetD41aNlt.q3ubpMSlpi.qBScV6',
+  personinfo_id: 2,
+  address_id: 2,
+  proglangs: 'JAVA',
+  gender: 'MALE',
+  pref: 'WOMEN',
+  role: 1 }
+{ _id: ObjectId("624b4e24597e5cebd7a4eb9d"),
+  username: 'maria',
+  password: '$2a$10$S7cFpI0nBuf/67t6Jfut.eT26i2dmyvnAVYslLIpfmy3Mdx9ID23S',
+  personinfo_id: 3,
+  address_id: 3,
+  proglangs: 'JAVA',
+  gender: 'FEMALE',
+  pref: 'BOTH',
+  role: 2 }
+{ _id: ObjectId("624b4e56f5e80746deb9d975"),
+  username: 'gui',
+  password: '$2a$10$hh6L1NoLUzeiCPdCc7/gw.rY6XBmF9Sftz9dYitZZZyFAH0svPVce',
+  personinfo_id: 4,
+  address_id: 4,
+  proglangs: 'JAVA',
+  gender: 'MALE',
+  pref: 'BOTH',
+  role: 2 }
+  
+  
+db.tindev_user.remove({
+  "username": "gui"
+})
+{ acknowledged: true, deletedCount: 1 }
+
+
+db.tindev_user.find({
+  "gender": "FEMALE"
+})
+{ _id: ObjectId("624b4e24597e5cebd7a4eb9d"),
+  username: 'maria',
+  password: '$2a$10$S7cFpI0nBuf/67t6Jfut.eT26i2dmyvnAVYslLIpfmy3Mdx9ID23S',
+  personinfo_id: 3,
+  address_id: 3,
+  proglangs: 'JAVA',
+  gender: 'FEMALE',
+  pref: 'BOTH',
