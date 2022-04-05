@@ -1,0 +1,125 @@
+=========
+//AULA 2//
+=========
+
+//INSERT ONE
+
+db.tindev_user.insertOne(
+{  
+  "username": "Rafael",
+  "password": "$2a$10$S7cFpI0nBuf/67t6Jfut.eT26i2dmyvnAVYslLIpfmy3Mdx9ID23S)", 
+  "proglangs": {"nome":"JAVA"},
+  "gender":"MALE",
+  "pref":"BOTH",
+  "address": {"rua":"rua 7", "numero":"12"},
+  "personinfo": {"realname":"rafael","idade":"20"}
+})
+
+//INSERT MANY
+
+db.tindev_user.insertMany([
+{"username": "mariana",
+  "password": "$2a$10$S7cFpI0nBuf/67t6Jfut.eT26i2dmyvnAVYslLIpfmy3Mdx9ID23S)", 
+  "proglangs": {"nome":"JAVA"},
+  "gender":"FEMALE",
+  "pref":"BOTH",
+  "address": {"rua":"rua 7", "numero":"12"},
+  "personinfo": {"realname":"mariana","idade":"27"}},
+{"username": "juliano",
+  "password": "$2a$10$S7cFpI0nBuf/67t6Jfut.eT26i2dmyvnAVYslLIpfmy3Mdx9ID23S)", 
+  "proglangs": {"nome":"JAVA"},
+  "gender":"MALE",
+  "pref":"BOTH",
+  "address": {"rua":"rua 7", "numero":"12"},
+  "personinfo": {"realname":"juliano","idade":"18"}}
+])
+
+//FIND EQUAL
+
+db.tindev_user.find(
+  {"username":"mariana"}
+  )
+  
+ 
+//FIND AND
+
+db.tindev_user.find(
+	{"username":"gustavo", 
+	"personinfo.idade": {$lt:"25"}}
+)
+
+// DELETE
+
+db.tindev_user.deleteOne( { "username": "giuliano"} )
+
+//FIND EXPRESSAO
+
+db.tindev_user.find({
+    "username": /^gu/ 
+})
+
+//FIND CAMPOS ANINHADOS
+
+db.tindev_user.find({
+   "personinfo.idade" : "23"
+})
+
+//UPDATE
+
+db.tindev_user.updateOne(
+   { "username": "gustavo" },
+   {
+     $set: { "username": "giuliano"}           
+   }
+)
+
+=========
+//AULA 3//
+=========
+
+// FIND ORDENADO
+
+db.tindev_user.find({
+    "personinfo.idade": { $gt: "22" } 
+}).sort("username")
+
+db.tindev_user.find({ }).sort( { "personinfo.idade" : -1} )
+
+
+//FIND LIMITE 
+
+db.tindev_user.find({ "personinfo.idade": {$gt: "22"} }).sort( { "username" : -1 } ).limit(2)
+
+// FIND ARRAY
+
+db.tindev_user.find({
+    "tags": "iniciante"	
+})
+
+db.tindev_user.find( { tags: ["empregado", "experiente"] } )
+
+db.tindev_user.find( { tags: { $all: ["experiente", "empregado"] } } )
+
+//PROJECTION
+
+db.tindev_user.find( {}, { _id: 0,"username":1, "gender": 1, "proglangs": 1 } )
+
+//LIMPAR COLLECTION
+
+db.tindev_user.deleteMany({})
+
+//AGGREGATE
+
+db.salario.insertMany( [
+   { _id: 0, empresa: "Bradesco", status: "superior", salario: 5.300 },
+   { _id: 1, empresa: "Bradesco", status: "estagiario", salario: 2.100 },
+   { _id: 2, empresa: "Bradesco", status: "estagiario", salario: 1.800 },
+   { _id: 3, empresa: "Itau", status: "superior", salario: 7.000 },
+   { _id: 4, empresa: "Itau", status: "estagiario", salario: 1.500 },
+   { _id: 5, empresa: "Itau", status: "estagiario", salario: 2.350 }
+] )
+
+db.salario.aggregate( [
+   {$match: { status: "estagiario" } },
+   {$group: { _id: "$empresa", soma: { $sum: "$salario" } } }
+] )
